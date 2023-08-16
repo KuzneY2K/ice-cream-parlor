@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,600&family=Caprasimo&family=Tomorrow:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header class="sticky-top p-0 m-0">
+    <nav class="navbar navbar navbar-expand-lg bg-dark shadow">
+        <a href="#" class="navbar-brand text-white px-5">ICE CREAM PARLOR</a>
+    </nav>
+</header>
+
+<body>
+    <main class="container-fluid p-0 m-0">
+        <!-- STUB MAIN ROW -->
+        <section class="row p-0 m-0">
+            <!-- STUB L COL -->
+            <div class="col-12 col-md-4 p-0 m-0 px-4">
+                <!-- STUB TABLE ROW / TABLE  -->
+                <div class="section row p-0 m-0">
+                    <div class="col-12 p-0 m-0">
+                        <table class="table table-dark table-striped mt-5 border-5 border-black cart shadow">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price Each</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <tr>
+                                </tr>
+                            </tbody>
+                            <tbody id="table-body2">
+                                <tr>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><button class="btn btn-danger" id="chkOut">Check Out</button></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- STUB R COL -->
+            <div class="col-12 col-md-8 p-0 m-0 px-5">
+                <!-- STUB ITEM CARDS -->
+                <section class="row p-0 m-0 mt-5">
+                    <div class="col-12 item-title">Ice Cream</div>
+                    <div class="col-12 col-md-4">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=408&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Vanilla</h2>
+                                <p class="card-text price">Price $1</p>
+                                <button class="btn btn-dark van" onclick="buyIceCream('Vanilla')">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1633933358116-a27b902fad35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Strawberry</h2>
+                                <p class="card-text">Price $1.25</p>
+                                <button class="btn btn-dark" onclick="buyIceCream('Strawberry')">ADD TO
+                                    CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1642520597102-4bae1f350d0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Cookie Dough</h2>
+                                <p class="card-text">Price $1.25</p>
+                                <button class="btn btn-dark" onclick="buyIceCream('Cookie Dough')">ADD TO
+                                    CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 item-title mt-5">Toppings</div>
+                    <div class="col-12 col-md-4">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Sprinkles</h2>
+                                <p class="card-text price">Price $0.25</p>
+                                <button class="btn btn-dark" onclick="buyTopping('Sprinkles')">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1585502866757-30ae9e509e31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Chocolate Chips</h2>
+                                <p class="card-text price">Price $0.25</p>
+                                <button class="btn btn-dark" onclick="buyTopping('Chocolate Chips')">ADD TO
+                                    CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow" style="width: 18rem;">
+                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"
+                                alt="" class="card-img-top" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body">
+                                <h2 class="card-title">Cookie Chunks</h2>
+                                <p class="card-text price">Price $0.50</p>
+                                <button class="btn btn-dark" onclick="buyTopping('Cookie Chunks')">ADD TO
+                                    CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+
+<!-- <tr>
+    <td id="icecreamName"></td>
+    <td id="icecreamQty"></td>
+    <td id="icecreamPrice"></td>
+    <td id="icecreamTotal"></td>
+</tr> -->
