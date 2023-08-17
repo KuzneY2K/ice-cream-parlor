@@ -33,6 +33,33 @@ let toppings = [{
 let outputTable = document.getElementById('table-body')
 let outputTable2 = document.getElementById('table-body2')
 
+function postTotal() {
+    // GET FROM ARRAY
+    const COOKIEDOUGH = iceCream[0]
+    const VANILLA = iceCream[1]
+    const STRAWBERRY = iceCream[2]
+    const SPRINKLES = toppings[0]
+    const CHOCOLATECHIPS = toppings[1]
+    const COOKIECHUNKS = toppings[2]
+    const grandTotalOutput = document.getElementsByClassName('grand-total-output')[0]
+    // FLAVORS totals
+    let cookieDoughTotal = COOKIEDOUGH.quantity * COOKIEDOUGH.price
+    let vanillaTotal = VANILLA.quantity * VANILLA.price
+    let strawberryTotal = STRAWBERRY.quantity * STRAWBERRY.price
+    // TOPPINGS totals
+    let sprinklesTotal = SPRINKLES.quantity * SPRINKLES.price
+    let chocolateChipsTotal = CHOCOLATECHIPS.quantity * CHOCOLATECHIPS.price
+    let cookieChunksTotal = COOKIECHUNKS.quantity * COOKIECHUNKS.price
+
+    let flavorTotal = cookieDoughTotal + vanillaTotal + strawberryTotal
+    let toppingTotal = sprinklesTotal + chocolateChipsTotal + cookieChunksTotal
+
+    let grandTotal = flavorTotal + toppingTotal
+    console.log(grandTotal)
+    grandTotalOutput.innerHTML = `${grandTotal}`
+
+}
+
 
 function drawtoCartIC() {
 
@@ -50,7 +77,6 @@ function drawtoCartIC() {
         }
     })
     outputTable.innerHTML = dataTable
-
 }
 
 function drawtoCartT() {
@@ -78,6 +104,7 @@ function buyIceCream(item) {
     foundIcecream.quantity++
     drawtoCartIC()
     console.log(foundIcecream)
+    postTotal()
 }
 
 function buyTopping(item) {
@@ -86,4 +113,5 @@ function buyTopping(item) {
     foundTopping.quantity++
     drawtoCartT()
     console.log(foundTopping)
+    postTotal()
 }
