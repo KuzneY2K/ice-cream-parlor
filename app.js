@@ -33,15 +33,34 @@ let toppings = [{
 let outputTable = document.getElementById('table-body')
 let outputTable2 = document.getElementById('table-body2')
 
+const COOKIEDOUGH = iceCream[0]
+const VANILLA = iceCream[1]
+const STRAWBERRY = iceCream[2]
+const SPRINKLES = toppings[0]
+const CHOCOLATECHIPS = toppings[1]
+const COOKIECHUNKS = toppings[2]
+const grandTotalOutput = document.getElementsByClassName('grand-total-output')[0]
+
+function zeroTotal() {
+    COOKIEDOUGH.quantity = 0
+    VANILLA.quantity = 0
+    STRAWBERRY.quantity = 0
+    SPRINKLES.quantity = 0
+    CHOCOLATECHIPS.quantity = 0
+    COOKIECHUNKS.quantity = 0
+
+    let zeroTotal = COOKIEDOUGH.quantity + VANILLA.quantity + STRAWBERRY.quantity + SPRINKLES.quantity + CHOCOLATECHIPS.quantity + COOKIECHUNKS.quantity
+
+    let dataTable = ''
+    let dataTable2 = ''
+
+    grandTotalOutput.innerHTML = `${zeroTotal}`
+    outputTable.innerHTML = dataTable
+    outputTable2.innerHTML = dataTable2
+
+}
+
 function postTotal() {
-    // GET FROM ARRAY
-    const COOKIEDOUGH = iceCream[0]
-    const VANILLA = iceCream[1]
-    const STRAWBERRY = iceCream[2]
-    const SPRINKLES = toppings[0]
-    const CHOCOLATECHIPS = toppings[1]
-    const COOKIECHUNKS = toppings[2]
-    const grandTotalOutput = document.getElementsByClassName('grand-total-output')[0]
     // FLAVORS totals
     let cookieDoughTotal = COOKIEDOUGH.quantity * COOKIEDOUGH.price
     let vanillaTotal = VANILLA.quantity * VANILLA.price

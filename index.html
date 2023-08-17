@@ -20,8 +20,8 @@
     <title>Document</title>
 </head>
 <header class="sticky-top p-0 m-0">
-    <nav class="navbar navbar navbar-expand-lg bg-dark shadow">
-        <a href="#" class="navbar-brand text-white px-5">ICE CREAM PARLOR</a>
+    <nav class="navbar navbar navbar-expand-lg bg-dark shadow d-flex justify-content-center">
+        <a href="#" class="navbar-brand text-white ms-2">ICE CREAM PARLOR <i class="mdi mdi-ice-cream"></i></a>
     </nav>
 </header>
 
@@ -34,7 +34,9 @@
                 <!-- STUB TABLE ROW / TABLE  -->
                 <div class="section row p-0 m-0">
                     <div class="col-12 p-0 m-0">
-                        <table class="table table-dark table-striped mt-5 border-5 border-black cart shadow">
+                        <h2 class="item-title mt-5">My Cart</h2>
+                        <table
+                            class="table table-dark table-striped border-5 border-black cart shadow text-start text-nowrap">
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
@@ -53,11 +55,13 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td><button class="btn btn-danger" id="chkOut">Check Out</button></td>
+                                    <td><button class="btn btn-danger" id="chkOut" onclick="zeroTotal()">Check
+                                            Out</button></td>
                                     <td></td>
                                     <td></td>
-                                    <td>
-                                        <p>Grand Total: $<span class="grand-total-output text-center"></span></p>
+                                    <td class="position-relative">
+                                        <p class="gtOut position-absolute">Grand Total: $<span
+                                                class="grand-total-output text-start gtOut"></span></p>
                                     </td>
                                 </tr>
                             </tfoot>
