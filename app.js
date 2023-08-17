@@ -37,8 +37,10 @@ let outputTable2 = document.getElementById('table-body2')
 function drawtoCartIC() {
 
     let dataTable = ''
+    icTotal = 0
     iceCream.forEach(ic => {
         if (ic.quantity > 0) {
+            icTotal = ic.quantity * ic.price
             dataTable += `<tr>
                                     <td id="icecreamName">${ic.name}</td>
                                     <td id="icecreamQty">x${ic.quantity}</td>
@@ -47,7 +49,6 @@ function drawtoCartIC() {
                                 </tr>`
         }
     })
-    sum(icTotal, tTotal)
     outputTable.innerHTML = dataTable
 
 }
@@ -55,7 +56,7 @@ function drawtoCartIC() {
 function drawtoCartT() {
 
     let dataTable2 = ''
-
+    tTotal = 0
     toppings.forEach(t => {
         if (t.quantity > 0) {
             tTotal = t.quantity * t.price
